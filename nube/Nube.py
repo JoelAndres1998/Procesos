@@ -8,7 +8,7 @@ url = url + str(usuario) + "?tab=tags"
 pagina = requests.get(url)
 
 sopa = BeautifulSoup(pagina.content, 'html.parser')
-user = sopa.find_all('a', class_='post-tag')
+user = sopa.find_all('a',class_='post-tag')
 
 nombres = list()
 
@@ -24,8 +24,8 @@ stopwords =[]
 abrir = open('nube.txt','r+')
 data = abrir.read().replace('','')
 
-wordcloud = WordCloud(width=700,height=700,background_color='cyan',stopwords=stopwords,min_font_size=10, max_font_size=300).generate(data)
+nube = WordCloud(width=700,height=700,background_color='cyan',stopwords=stopwords,min_font_size=20, max_font_size=400).generate(data)
 
-wordcloud.to_file('imagen.png')
+nube.to_file('Nube.png')
 print('Imagen Generada')
 print('Imagen Guardada')
