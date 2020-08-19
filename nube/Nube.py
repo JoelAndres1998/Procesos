@@ -11,7 +11,6 @@ sopa = BeautifulSoup(pagina.content, 'html.parser')
 user = sopa.find_all('a',class_='post-tag')
 
 nombres = list()
-
 for i in user:
     nombres.append(i.text)
 print(nombres)
@@ -29,3 +28,8 @@ nube = WordCloud(width=700,height=700,background_color='cyan',stopwords=stopword
 nube.to_file('Nube.png')
 print('Imagen Generada')
 print('Imagen Guardada')
+
+#Universidad de Guayaquil
+#Proyecto Procesos de Software
+#Integrantes
+#Joel Andres Villao De la S
