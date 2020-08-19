@@ -33,3 +33,4 @@ print('Imagen Guardada')
 #Proyecto Procesos de Software
 #Integrantes
 #Joel Andres Villao De la S
+#Iván Harijan Ramos Ochoa 
