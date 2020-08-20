@@ -2,28 +2,27 @@ import requests
 from bs4 import BeautifulSoup
 from wordcloud import WordCloud, STOPWORDS
 
-url = 'https://es.stackoverflow.com/users/'
-usuario = raw_input("Ingrese Usuario: ")
-url = url + str(usuario) + "?tab=tags"
+usuario = raw_input('Ingrese Usuario:')
+url = 'https://es.stackoverflow.com/users/' + str(usuario) + '?tab=tags'
 pagina = requests.get(url)
 
-sopa = BeautifulSoup(pagina.content, 'html.parser')
-user = sopa.find_all('a',class_='post-tag')
+leer = BeautifulSoup(pagina.content, 'html.parser')
+user = leer.find_all('a',class_='post-tag')
 
-nombres = list()
+tags = list()
 for i in user:
-    nombres.append(i.text)
-print(nombres)
+    tags.append(i.text)
+print(tags)
 
 with open('nube.txt','w+') as file:
-    file.write(str(nombres))
+    file.write(str(tags))
 
 stopwords =[]
 
 abrir = open('nube.txt','r+')
-data = abrir.read().replace('','')
+etiquetas = abrir.read().replace('','')
 
-nube = WordCloud(width=700,height=700,background_color='cyan',stopwords=stopwords,min_font_size=20, max_font_size=400).generate(data)
+nube = WordCloud(width=700,height=700,background_color='cyan',stopwords=stopwords,min_font_size=20, max_font_size=400).generate(etiquetas)
 
 nube.to_file('Nube.png')
 print('Imagen Generada')
@@ -33,6 +32,6 @@ print('Imagen Guardada')
 #Proyecto Procesos de Software
 #Integrantes
 #Joel Andres Villao De la S
-#Iván Harijan Ramos Ochoa 
-#Jonathan Andy Quimis MEndoza
+#Ivan harijan Ramos Ochoa
+#Jonathan Andy Quimis M2Endoza
 #Victor Hugo Varas Roca
