@@ -7,10 +7,10 @@ url = 'https://es.stackoverflow.com/users/' + str(usuario) + '?tab=tags'
 pagina = requests.get(url)
 
 leer = BeautifulSoup(pagina.content, 'html.parser')
-user = leer.find_all('a',class_='post-tag')
+filtro = leer.find_all('a',class_='post-tag')
 
 tags = list()
-for i in user:
+for i in filtro:
     tags.append(i.text)
 print(tags)
 
