@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from wordcloud import WordCloud, STOPWORDS
 
-usuario = raw_input('Ingrese Usuario:')
+usuario = raw_input('Ingrese Usuario:') # Ingrese usuario por numero de ID
 url = 'https://es.stackoverflow.com/users/' + str(usuario) + '?tab=tags'
 pagina = requests.get(url)
 
