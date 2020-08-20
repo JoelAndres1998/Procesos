@@ -35,3 +35,4 @@ print('Imagen Guardada')
 #Joel Andres Villao De la S
 #Iván Harijan Ramos Ochoa 
 #Jonathan Andy Quimis MEndoza
+#Victor Hugo Varas Roca
