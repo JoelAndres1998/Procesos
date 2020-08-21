@@ -28,6 +28,10 @@ nube.to_file('Nube.png')
 print('Imagen Generada')
 print('Imagen Guardada')
 
+nube.to_file("/content/img.png")
+img=nube.to_image()
+img
+
 #Universidad de Guayaquil
 #Proyecto Procesos de Software
 #Integrantes
